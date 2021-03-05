@@ -1,15 +1,7 @@
 {%extends 'base.html'%} {% block content %}
-<h1>about</h1>
+<h1>{{title|capfirst}}</h1>
 <p>This is a about</p>
 
-<p>{{ my_text }} , {{ my_number }}</p>
-
-<ul>
-  {% for item in my_list %} {% if abc == 312 %}
-  <li>{{forloop.count}} - {{abc|add:22}}</li>
-  {% endif %}
-  <li>{{forloop.counter}} {{item}}</li>
-  {%endfor%}
-</ul>
+<p>{{ title }} , {{ my_number }}</p>
 
 {%endblock%}
