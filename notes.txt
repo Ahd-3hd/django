@@ -1,0 +1,14 @@
+1- to create an app/component:
+    run python manage.py startapp nameofapp
+
+2- to create a model:
+    in models.py create a class that inherits from models.Model
+    which have attributes that are equal to model fields eg: models.CharField().... etc
+    
+3- to add the app, add it to installed app list in settings.py
+
+4- don't forget to run makemigrations then migrate after creating apps or change them
+
+
+5- to register an app in admin, import the  model class and admin.site.register(modelname)
+

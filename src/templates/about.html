@@ -5,8 +5,10 @@
 <p>{{ my_text }} , {{ my_number }}</p>
 
 <ul>
-  {% for item in my_list %}
-  <li>{{item}}</li>
+  {% for item in my_list %} {% if abc == 312 %}
+  <li>{{forloop.count}} - {{abc|add:22}}</li>
+  {% endif %}
+  <li>{{forloop.counter}} {{item}}</li>
   {%endfor%}
 </ul>
 
