@@ -1,7 +1,8 @@
 from django.shortcuts import render,get_object_or_404
-from django.views.generic import ListView,DetailView,CreateView,UpdateView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from .models import Article
 from .forms import ArticleForm
+from django.urls import reverse
 # Create your views here.
 
 
@@ -38,3 +39,14 @@ class ArticleDetailView(DetailView):
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Article,id=id_)
+
+
+class ArticleDeleteView(DeleteView):
+    template_name = "articles/article_delete.html"
+    # queryset = Article.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article,id=id_)
+    def get_success_url(self):
+        return reverse('articles:article-list')
